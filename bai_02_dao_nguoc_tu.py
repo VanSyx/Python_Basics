@@ -1,11 +1,19 @@
-# Bài 2: Đảo ngược thứ tự các từ trong chuỗi.
+import sys
 
-import sys  # Import thư viện sys để cấu hình cách nhập và xuất dữ liệu.
-sys.stdin.reconfigure(encoding="utf-8")  # Cấu hình dữ liệu nhập theo bảng mã UTF-8.
-sys.stdout.reconfigure(encoding="utf-8")  # Cấu hình dữ liệu xuất theo bảng mã UTF-8.
+sys.stdin.reconfigure(encoding="utf-8")
+sys.stdout.reconfigure(encoding="utf-8")
 
-chuoi = input("Nhập chuỗi: ")  # Nhập chuỗi từ bàn phím.
-ds_tu = chuoi.split()  # Tách chuỗi thành danh sách các từ.
-ds_tu_dao_nguoc = ds_tu[::-1]  # Đảo ngược thứ tự các từ trong danh sách.
-ket_qua = " ".join(ds_tu_dao_nguoc)  # Ghép danh sách từ đã đảo thành chuỗi mới.
-print("Chuỗi sau khi đảo ngược:", ket_qua)  # In chuỗi kết quả ra màn hình.
+
+def dao_nguoc_cac_tu(chuoi):
+    danh_sach_tu = chuoi.split()
+    danh_sach_tu_dao = danh_sach_tu[::-1]
+    return " ".join(danh_sach_tu_dao)
+
+
+def main():
+    chuoi = input("Nhập chuỗi: ")
+    print("Kết quả:", dao_nguoc_cac_tu(chuoi))
+
+
+if __name__ == "__main__":
+    main()

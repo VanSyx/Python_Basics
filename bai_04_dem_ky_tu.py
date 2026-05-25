@@ -1,14 +1,31 @@
-# Bài 4: Liệt kê số lần xuất hiện của mỗi ký tự.
+import sys
 
-import sys  # Import thư viện sys để cấu hình cách nhập và xuất dữ liệu.
-sys.stdin.reconfigure(encoding="utf-8")  # Cấu hình dữ liệu nhập theo bảng mã UTF-8.
-sys.stdout.reconfigure(encoding="utf-8")  # Cấu hình dữ liệu xuất theo bảng mã UTF-8.
+sys.stdin.reconfigure(encoding="utf-8")
+sys.stdout.reconfigure(encoding="utf-8")
 
-chuoi = input("Nhập chuỗi: ")  # Nhập chuỗi bất kỳ từ bàn phím.
-da_dem = ""  # Tạo chuỗi rỗng để lưu các ký tự đã được đếm.
 
-for ky_tu in chuoi:  # Duyệt từng ký tự trong chuỗi.
-    if ky_tu not in da_dem:  # Chỉ xử lý nếu ký tự này chưa được đếm.
-        so_lan = chuoi.count(ky_tu)  # Đếm số lần xuất hiện của ký tự trong chuỗi.
-        print("Ký tự", repr(ky_tu), "xuất hiện", so_lan, "lần")  # In ký tự và số lần xuất hiện.
-        da_dem = da_dem + ky_tu  # Thêm ký tự vào danh sách đã đếm.
+def dem_so_lan_ky_tu(chuoi):
+    ket_qua = {}
+
+    for ky_tu in chuoi:
+        if ky_tu in ket_qua:
+            ket_qua[ky_tu] = ket_qua[ky_tu] + 1
+        else:
+            ket_qua[ky_tu] = 1
+
+    return ket_qua
+
+
+def in_ket_qua(ket_qua):
+    for ky_tu in ket_qua:
+        print("Ký tự", repr(ky_tu), "xuất hiện", ket_qua[ky_tu], "lần")
+
+
+def main():
+    chuoi = input("Nhập chuỗi: ")
+    ket_qua = dem_so_lan_ky_tu(chuoi)
+    in_ket_qua(ket_qua)
+
+
+if __name__ == "__main__":
+    main()
