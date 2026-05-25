@@ -1,9 +1,4 @@
 # Bài tập Python cơ bản 1
-
-Repo này chứa lời giải cho 10 bài tập Python cơ bản trong file đề bài thực tập.
-
-Các chương trình được viết theo hướng đơn giản, dễ hiểu cho người mới học Python. Mỗi bài có hàm xử lý riêng và phần `main()` để nhập, xuất dữ liệu.
-
 ## Cách chạy
 
 Mở terminal tại thư mục repo, sau đó chạy từng bài:
